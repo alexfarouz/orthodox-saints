@@ -1,0 +1,148 @@
+export type Item = { id: string; name: string; text: string; image: any };
+
+export const DATA: Item[] = [
+  {
+    id: "anthony",
+    name: "St. Anthony the Great",
+    text: 'Everyday I say to myself, "Today I will begin."',
+    image: require("../../assets/images/st-anthony.jpg"),
+  },
+  {
+    id: "cyril",
+    name: "St. Cyril of Alexandria",
+    text: "…",
+    image: require("../../assets/images/st-cyril.webp"),
+  },
+  {
+    id: "athanasius",
+    name: "St. Athanasius the Apostolic",
+    text: "…",
+    image: require("../../assets/images/st-athanasius.webp"),
+  },
+  {
+    id: "johnc",
+    name: "St. John Chrysostom",
+    text: "…",
+    image: require("../../assets/images/st-johnc.webp"),
+  },
+  {
+    id: "moses",
+    name: "St. Moses the Strong",
+    text: "…",
+    image: require("../../assets/images/st-moses.webp"),
+  },
+  {
+    id: "mina",
+    name: "St. Mina the Wonderworker",
+    text: "…",
+    image: require("../../assets/images/st-mina.webp"),
+  },
+  {
+    id: "shenouda",
+    name: "St. Shenouda the Archimandrite",
+    text: "…",
+    image: require("../../assets/images/st-shenouda.jpg"),
+  },
+  {
+    id: "pachomius",
+    name: "St. Pachomius the Great",
+    text: "…",
+    image: require("../../assets/images/st-pachomius.jpg"),
+  },
+  {
+    id: "diouscorus",
+    name: "St. Dioscorus",
+    text: "…",
+    image: require("../../assets/images/st-dioscorus.jpeg"),
+  },
+  {
+    id: "gregory",
+    name: "St. Gregory of Nazianzus",
+    text: "…",
+    image: require("../../assets/images/st-gregory-theologian.jpg"),
+  },
+  {
+    id: "maximus-and-dometius",
+    name: "St. Maximus & St. Dometius",
+    text: "…",
+    image: require("../../assets/images/st-maximus-and-dometius.jpeg"),
+  },
+  {
+    id: "severus",
+    name: "St. Severus",
+    text: "…",
+    image: require("../../assets/images/st-severus.jpeg"),
+  },
+  {
+    id: "tekle",
+    name: "St. Tekle Haymanot",
+    text: "…",
+    image: require("../../assets/images/st-tekle.jpeg"),
+  },
+  {
+    id: "mark",
+    name: "St. Mark the Evangelist",
+    text: "…",
+    image: require("../../assets/images/st-mark.jpg"),
+  },
+  {
+    id: "gregory-armenian",
+    name: "St. Gregory the Armenian",
+    text: "…",
+    image: require("../../assets/images/st-gregory-armenian.jpg"),
+  },
+  {
+    id: "kyrillos",
+    name: "Pope Kryillos VI",
+    text: "…",
+    image: require("../../assets/images/pope-kyrillos.webp"),
+  },
+  {
+    id: "shenouda-iii",
+    name: "Pope Shenouda III",
+    text: "…",
+    image: require("../../assets/images/pope-shenouda-iii.jpg"),
+  },
+  {
+    id: "reweis",
+    name: "St. Reweis",
+    text: "…",
+    image: require("../../assets/images/st-reweis.webp"),
+  },
+  {
+    id: "john-short",
+    name: "St. John the Short",
+    text: "…",
+    image: require("../../assets/images/st-john-short.webp"),
+  },
+  {
+    id: "macarius",
+    name: "St. Macarius the Great",
+    text: "…",
+    image: require("../../assets/images/st-macarius.jpeg"),
+  },
+  {
+    id: "habib",
+    name: "Archdeacon Habib Girgis",
+    text: "…",
+    image: require("../../assets/images/habib-gerges.jpeg"),
+  },
+  {
+    id: "mina-abood",
+    name: "Fr. Mina Abood",
+    text: "…",
+    image: require("../../assets/images/fr-mina-abood.jpeg"),
+  },
+  {
+    id: "bishoy-kamel",
+    name: "Fr. Bishoy Kamel",
+    text: "…",
+    image: require("../../assets/images/fr-bishoy-kamel.jpg"),
+  },
+  {
+    id: "pishoy",
+    name: "St. Pishoy the Perfect Man",
+    text: "…",
+    image: require("../../assets/images/st-pishoy.avif"),
+  },
+];

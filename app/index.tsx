@@ -1,7 +1,6 @@
 import * as Notifications from "expo-notifications";
 import React, { useEffect, useMemo, useState } from "react";
 import {
-  Alert,
   Image,
   SafeAreaView,
   StyleSheet,
@@ -9,7 +8,6 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import type { Item } from "./data/saints";
 import { SAINT_BY_HOUR } from "./data/saints-by-hour";
 const coptic = require("../assets/images/cross.png");
 
@@ -25,67 +23,12 @@ Notifications.setNotificationHandler({
 
 const hourLabel = (d: Date) => d.toLocaleTimeString([], { hour: "numeric" });
 
-// --- Notifications helpers ---------------------------------------------------
-async function ensurePerms() {
-  const { status } = await Notifications.getPermissionsAsync();
-  if (status !== "granted") {
-    const res = await Notifications.requestPermissionsAsync();
-    if (res.status !== "granted") throw new Error("no-permission");
-  }
-}
-
-// Top of next hour
-function nextTopOfHour(from = new Date()) {
-  const n = new Date(from);
-  n.setMinutes(0, 0, 0);
-  if (from.getMinutes() !== 0 || from.getSeconds() !== 0)
-    n.setHours(n.getHours() + 1);
-  return n;
-}
-
-// For quick testing: schedule at the NEXT MINUTE (then repeat hourly)
-async function scheduleAtNextMinuteThenHourly(item: Item) {
-  await ensurePerms();
-  const now = new Date();
-  const next = new Date(now.getTime() + 60 * 1000);
-  await Notifications.cancelAllScheduledNotificationsAsync();
-  await Notifications.scheduleNotificationAsync({
-    content: { title: item.name, body: item.text },
-    trigger: {
-      type: "calendar",
-      hour: next.getHours(),
-      minute: next.getMinutes(),
-      repeats: true,
-    },
-  });
-  Alert.alert("Scheduled", "It will fire next minute, then hourly from there.");
-}
-
-// Real use: schedule the next 48 top-of-the-hour notifications with proper text
-async function scheduleNext48Hours() {
-  await ensurePerms();
-  await Notifications.cancelAllScheduledNotificationsAsync();
-  const first = nextTopOfHour();
-  const count = 48; // keep well under iOS pending limit (~64)
-
-  for (let i = 0; i < count; i++) {
-    const fire = new Date(first.getTime() + i * 60 * 60 * 1000);
-    const saint = SAINT_BY_HOUR[fire.getHours()]; // fixed hour→saint mapping
-    await Notifications.scheduleNotificationAsync({
-      content: { title: saint.name, body: saint.text },
-      trigger: fire, // one-off at the exact wall-clock time
-    });
-  }
-  Alert.alert("Scheduled", "Hourly quotes planned for the next 48 hours.");
-}
-
 export default function Index() {
   const [now, setNow] = useState(new Date());
   const [followClock, setFollowClock] = useState(true);
   const [manualHour, setManualHour] = useState(0); // 0..23
 
   useEffect(() => {
-    // refresh every 30s when following clock
     if (!followClock) return;
     const t = setInterval(() => setNow(new Date()), 30 * 1000);
     return () => clearInterval(t);
@@ -108,14 +51,14 @@ export default function Index() {
         />
 
         <Text style={styles.jesusPrayerText}>
-          {"Lord Jesus Christ, Son of God, have mercy on me, a sinner"}
+          Lord Jesus Christ, Son of God, have mercy on me, a sinner
         </Text>
 
         <View style={styles.imageWrap}>
           <Image source={item.image} resizeMode="cover" style={styles.image} />
         </View>
 
-        <Text style={styles.timeText}>{`${hourLabel(now)}`}</Text>
+        <Text style={styles.timeText}>{hourLabel(now)}</Text>
 
         <Text style={styles.captionBase}>
           <Text style={styles.captionName}>{item.name}</Text>
@@ -155,19 +98,7 @@ export default function Index() {
           </TouchableOpacity>
         </View>
 
-        <View style={styles.row}>
-          <TouchableOpacity
-            style={styles.btn}
-            onPress={() => scheduleAtNextMinuteThenHourly(item)}
-          >
-            <Text style={styles.btnText}>Test: next min → hourly</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.btn} onPress={scheduleNext48Hours}>
-            <Text style={styles.btnText}>Schedule next 48 hrs</Text>
-          </TouchableOpacity>
-        </View>
-
+        {/* Optional: remove this if you don't need it */}
         <TouchableOpacity
           style={[styles.btn, { marginTop: 10 }]}
           onPress={() => Notifications.cancelAllScheduledNotificationsAsync()}
@@ -186,14 +117,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 16,
     paddingBottom: 24,
-  },
-  header: {
-    color: "white",
-    fontSize: 24,
-    fontWeight: "800",
-    textAlign: "center",
-    marginTop: 16,
-    marginBottom: 12,
   },
   imageWrap: {
     width: "92%",
@@ -232,22 +155,16 @@ const styles = StyleSheet.create({
     marginTop: 12,
     fontSize: 18,
   },
-
   captionName: {
-    fontWeight: "700", // bold just the saint name
-    // or fontFamily: "Inter_700Bold" if using Inter
+    fontWeight: "700",
   },
-
   captionSep: {
     fontWeight: "400",
-    // or fontFamily: "Inter_400Regular"
   },
-
   captionQuote: {
     fontWeight: "400",
     fontSize: 16,
   },
-
   timeText: {
     color: "white",
     fontWeight: "500",

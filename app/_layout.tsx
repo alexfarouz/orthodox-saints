@@ -23,10 +23,10 @@ export default function RootLayout() {
 
   useEffect(() => {
     if (fontsLoaded) {
-      // Set Inter as the global default for <Text>
-      RNText.defaultProps ??= {};
-      RNText.defaultProps.style = [
-        RNText.defaultProps.style,
+      const TextAny = RNText as any; // ← cast
+      TextAny.defaultProps = TextAny.defaultProps || {};
+      TextAny.defaultProps.style = [
+        TextAny.defaultProps.style,
         { fontFamily: "Inter_400Regular" },
       ];
       SplashScreen.hideAsync();
@@ -38,13 +38,9 @@ export default function RootLayout() {
   return (
     <Stack
       screenOptions={{
-        headerShown: false, // hides the "index" header bar
+        headerShown: false,
         contentStyle: { backgroundColor: "black" },
       }}
-    >
-      {/* or just for this screen:
-      <Stack.Screen name="index" options={{ headerShown: false }} />
-      */}
-    </Stack>
+    />
   );
 }

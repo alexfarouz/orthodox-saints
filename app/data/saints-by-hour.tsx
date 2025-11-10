@@ -10,29 +10,29 @@ export const byId: Record<string, Item> = Object.fromEntries(
 // If an id isn't in DATA yet, the helper will auto-cycle as a fallback.
 const SAINT_IDS_24: (string | null)[] = [
   "anthony", // 00:00
-  "cyril", // 01:00
+  "jacob-nisibis", // 01:00
   "athanasius", // 02:00
   "johnc", // 03:00
   "moses", // 04:00
-  "mina", // 05:00
+  "ephrem", // 05:00
   "shenouda", // 06:00
   "pachomius", // 07:00
-  "diouscorus", // 08:00
+  "isaac", // 08:00
   "gregory", // 09:00
-  "maximus-and-dometius", // 10:00
+  "arsenius", // 10:00
   "severus", // 11:00
-  "tekle", // 12:00
-  "mark", // 13:00
-  "gregory-armenian", // 14:00
+  "agathon", // 12:00
+  "jacob-serugh", // 13:00
+  "poemen", // 14:00
   "kyrillos", // 15:00
   "shenouda-iii", // 16:00
-  "reweis", // 17:00
-  "john-short", // 18:00
-  "macarius", // 19:00
-  "habib", // 20:00
-  "mina-abood", // 21:00
-  "bishoy-kamel", // 22:00
-  "pishoy", // 23:00
+  "serapion", // 17:00
+  "mary-egypt", // 18:00
+  "basil", // 19:00
+  "sisoes", // 20:00
+  "bishoy-kamel", // 21:00
+  "pishoy", // 22:00
+  "macarius", // 23:00
 ];
 
 export const SAINT_BY_HOUR: Item[] = (() => {

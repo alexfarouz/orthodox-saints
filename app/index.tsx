@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import type { Item } from "./data/saints";
 import { SAINT_BY_HOUR } from "./data/saints-by-hour";
+const coptic = require("../assets/images/cross.png");
 
 // Show alerts in foreground while testing
 Notifications.setNotificationHandler({
@@ -100,7 +101,13 @@ export default function Index() {
   return (
     <SafeAreaView style={styles.root}>
       <View style={styles.container}>
-        <Text style={styles.footerText}>
+        <Image
+          source={coptic}
+          style={styles.cross}
+          accessibilityLabel="Coptic cross"
+        />
+
+        <Text style={styles.jesusPrayerText}>
           {"Lord Jesus Christ, Son of God, have mercy on me, a sinner"}
         </Text>
 
@@ -108,8 +115,12 @@ export default function Index() {
           <Image source={item.image} resizeMode="cover" style={styles.image} />
         </View>
 
-        <Text style={styles.footerText}>
-          {`${hourLabel(now)}: ${item.name}: ${item.text}`}
+        <Text style={styles.timeText}>{`${hourLabel(now)}`}</Text>
+
+        <Text style={styles.captionBase}>
+          <Text style={styles.captionName}>{item.name}</Text>
+          <Text style={styles.captionSep}>: </Text>
+          <Text style={styles.captionQuote}>{item.text}</Text>
         </Text>
 
         {/* Controls */}
@@ -194,11 +205,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: { width: "100%", height: "100%" },
-  footerText: {
+  jesusPrayerText: {
     color: "white",
-    fontSize: 16,
-    fontWeight: "700",
-    marginTop: 12,
+    fontSize: 18,
+    fontWeight: "400",
+    marginBottom: 16,
     textAlign: "center",
   },
   row: {
@@ -214,6 +225,42 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderColor: "rgba(255,255,255,.25)",
     borderWidth: 1,
+  },
+  captionBase: {
+    color: "white",
+    textAlign: "center",
+    marginTop: 12,
+    fontSize: 18,
+  },
+
+  captionName: {
+    fontWeight: "700", // bold just the saint name
+    // or fontFamily: "Inter_700Bold" if using Inter
+  },
+
+  captionSep: {
+    fontWeight: "400",
+    // or fontFamily: "Inter_400Regular"
+  },
+
+  captionQuote: {
+    fontWeight: "400",
+    fontSize: 16,
+  },
+
+  timeText: {
+    color: "white",
+    fontWeight: "500",
+    textAlign: "center",
+    marginTop: 12,
+    fontSize: 16,
+  },
+  cross: {
+    width: 64,
+    height: 64,
+    alignSelf: "center",
+    marginBottom: 8,
+    resizeMode: "contain",
   },
   btnActive: { backgroundColor: "rgba(255,255,255,.07)" },
   btnText: { color: "white", fontWeight: "700" },

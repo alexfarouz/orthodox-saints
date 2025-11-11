@@ -1,13 +1,9 @@
-// data/saints-by-hour.ts
 import { DATA, Item } from "./saints";
 
-// Build a lookup by id:
 export const byId: Record<string, Item> = Object.fromEntries(
   DATA.map((s) => [s.id, s])
 );
 
-// Explicit hour → id list (00:00 through 23:00). Fill with your ids.
-// If an id isn't in DATA yet, the helper will auto-cycle as a fallback.
 const SAINT_IDS_24: (string | null)[] = [
   "anthony", // 00:00
   "jacob-nisibis", // 01:00

@@ -10,8 +10,8 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import type { Item } from "./data/saints";
-import { SAINT_BY_HOUR } from "./data/saints-by-hour";
+import type { Item } from "../data/saints";
+import { SAINT_BY_HOUR } from "../data/saints-by-hour";
 const coptic = require("../assets/images/cross.png");
 
 // Show alerts in foreground while testing
@@ -77,17 +77,17 @@ export default function Index() {
         });
       }
 
-      const id = await Notifications.scheduleNotificationAsync({
+      await Notifications.scheduleNotificationAsync({
         content: {
           title: item.name,
           body: item.text,
-          // sound: true, // optional; omit if TS complains — your handler already plays sound
-          // badge: 1,    // optional iOS
+          // sound: true,
+          // badge: 1,
         },
-        trigger: null, // << fire immediately
+        trigger: null,
       });
 
-      Alert.alert("Sent", `Notification id: ${id}`);
+      // Alert.alert("Sent", `Notification id: ${id}`);
     } catch (e: any) {
       console.error(e);
       Alert.alert("Error", String(e?.message ?? e));
@@ -152,14 +152,6 @@ export default function Index() {
             <Text style={styles.btnText}>Next ▶︎</Text>
           </TouchableOpacity>
         </View>
-
-        {/* Optional: remove this if you don't need it */}
-        <TouchableOpacity
-          style={[styles.btn, { marginTop: 10 }]}
-          onPress={() => Notifications.cancelAllScheduledNotificationsAsync()}
-        >
-          <Text style={styles.btnText}>Cancel all</Text>
-        </TouchableOpacity>
         <View style={styles.row}>
           <TouchableOpacity
             style={styles.btn}

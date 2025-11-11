@@ -1,20 +1,26 @@
 {
   "expo": {
-    "name": "orthodox-saints",
+    "name": "Orthodox Saints",
     "slug": "orthodox-saints",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/cross.png",
     "scheme": "orthodoxsaints",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+    "notification": {
+      "icon": "./assets/cross.png",
+      "color": "#000000"
+    },
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.anonymous.orthodoxsaints",
+      "supportsTablet": true,
+      "infoPlist": { "CFBundleDisplayName": "Orthodox Saints" }
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/images/cross.png",
+        "backgroundColor": "#000000"
       },
       "edgeToEdgeEnabled": true
     },
@@ -28,10 +34,10 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
+          "image": "./assets/images/cross.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#000000"
         }
       ]
     ],

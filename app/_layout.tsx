@@ -1,4 +1,3 @@
-// app/_layout.tsx
 import {
   Inter_400Regular,
   Inter_500Medium,
@@ -23,7 +22,7 @@ export default function RootLayout() {
 
   useEffect(() => {
     if (fontsLoaded) {
-      const TextAny = RNText as any; // ← cast
+      const TextAny = RNText as any;
       TextAny.defaultProps = TextAny.defaultProps || {};
       TextAny.defaultProps.style = [
         TextAny.defaultProps.style,

@@ -1,15 +1,15 @@
 import * as Notifications from "expo-notifications";
-import React, { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   Alert,
   Image,
   Platform,
-  SafeAreaView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import type { Item } from "../data/saints";
 import { SAINT_BY_HOUR } from "../data/saints-by-hour";
 const coptic = require("../assets/images/cross.png");

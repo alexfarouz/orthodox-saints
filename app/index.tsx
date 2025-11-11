@@ -1,13 +1,16 @@
 import * as Notifications from "expo-notifications";
 import React, { useEffect, useMemo, useState } from "react";
 import {
+  Alert,
   Image,
+  Platform,
   SafeAreaView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from "react-native";
+import type { Item } from "./data/saints";
 import { SAINT_BY_HOUR } from "./data/saints-by-hour";
 const coptic = require("../assets/images/cross.png");
 
@@ -38,6 +41,58 @@ export default function Index() {
     () => (followClock ? now.getHours() : manualHour),
     [followClock, manualHour, now]
   );
+
+  async function ensurePerms() {
+    // Check current
+    let perms = await Notifications.getPermissionsAsync();
+
+    // If not granted, request with explicit iOS options
+    if (perms.status !== "granted") {
+      perms = await Notifications.requestPermissionsAsync({
+        ios: {
+          allowAlert: true,
+          allowBadge: true,
+          allowSound: true,
+        },
+      });
+    }
+
+    if (perms.status !== "granted") {
+      Alert.alert("Notifications blocked", "Enable notifications in Settings.");
+      throw new Error("no-permission");
+    }
+  }
+
+  async function sendTestNotification(item: Item) {
+    try {
+      await ensurePerms();
+
+      if (Platform.OS === "android") {
+        // Create/ensure a channel once; notifications will use it automatically
+        await Notifications.setNotificationChannelAsync("default", {
+          name: "default",
+          importance: Notifications.AndroidImportance.HIGH,
+          vibrationPattern: [0, 250, 250, 250],
+          lightColor: "#FFFFFF",
+        });
+      }
+
+      const id = await Notifications.scheduleNotificationAsync({
+        content: {
+          title: item.name,
+          body: item.text,
+          // sound: true, // optional; omit if TS complains — your handler already plays sound
+          // badge: 1,    // optional iOS
+        },
+        trigger: null, // << fire immediately
+      });
+
+      Alert.alert("Sent", `Notification id: ${id}`);
+    } catch (e: any) {
+      console.error(e);
+      Alert.alert("Error", String(e?.message ?? e));
+    }
+  }
 
   const item = SAINT_BY_HOUR[hour];
 
@@ -105,6 +160,14 @@ export default function Index() {
         >
           <Text style={styles.btnText}>Cancel all</Text>
         </TouchableOpacity>
+        <View style={styles.row}>
+          <TouchableOpacity
+            style={styles.btn}
+            onPress={() => sendTestNotification(item)}
+          >
+            <Text style={styles.btnText}>Send test notification</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </SafeAreaView>
   );

@@ -1,5 +1,5 @@
 import * as Notifications from "expo-notifications";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   Alert,
   Image,
@@ -12,6 +12,7 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import type { Item } from "../data/saints";
 import { SAINT_BY_HOUR } from "../data/saints-by-hour";
+
 const coptic = require("../assets/images/cross.png");
 
 // Show alerts in foreground while testing
@@ -31,6 +32,7 @@ export default function Index() {
   const [followClock, setFollowClock] = useState(true);
   const [manualHour, setManualHour] = useState(0); // 0..23
 
+  // tick every 30s when following the clock
   useEffect(() => {
     if (!followClock) return;
     const t = setInterval(() => setNow(new Date()), 30 * 1000);
@@ -42,33 +44,24 @@ export default function Index() {
     [followClock, manualHour, now]
   );
 
-  async function ensurePerms() {
-    // Check current
+  const ensurePerms = useCallback(async () => {
     let perms = await Notifications.getPermissionsAsync();
-
-    // If not granted, request with explicit iOS options
     if (perms.status !== "granted") {
       perms = await Notifications.requestPermissionsAsync({
-        ios: {
-          allowAlert: true,
-          allowBadge: true,
-          allowSound: true,
-        },
+        ios: { allowAlert: true, allowBadge: true, allowSound: true },
       });
     }
-
     if (perms.status !== "granted") {
       Alert.alert("Notifications blocked", "Enable notifications in Settings.");
       throw new Error("no-permission");
     }
-  }
+  }, []);
 
+  // Send a one-off local notification immediately (test button)
   async function sendTestNotification(item: Item) {
     try {
       await ensurePerms();
-
       if (Platform.OS === "android") {
-        // Create/ensure a channel once; notifications will use it automatically
         await Notifications.setNotificationChannelAsync("default", {
           name: "default",
           importance: Notifications.AndroidImportance.HIGH,
@@ -76,23 +69,46 @@ export default function Index() {
           lightColor: "#FFFFFF",
         });
       }
-
       await Notifications.scheduleNotificationAsync({
-        content: {
-          title: item.name,
-          body: item.text,
-          // sound: true,
-          // badge: 1,
-        },
-        trigger: null,
+        content: { title: item.name, body: item.text },
+        trigger: null, // fire now
       });
-
-      // Alert.alert("Sent", `Notification id: ${id}`);
     } catch (e: any) {
       console.error(e);
       Alert.alert("Error", String(e?.message ?? e));
     }
   }
+
+  const scheduleDailyTopOfHourForever = useCallback(async () => {
+    await ensurePerms();
+
+    if (Platform.OS === "android") {
+      await Notifications.setNotificationChannelAsync("default", {
+        name: "default",
+        importance: Notifications.AndroidImportance.HIGH,
+      });
+    }
+
+    await Notifications.cancelAllScheduledNotificationsAsync();
+
+    for (let h = 0; h < 24; h++) {
+      const saint = SAINT_BY_HOUR[h];
+      await Notifications.scheduleNotificationAsync({
+        content: { title: saint.name, body: saint.text },
+        trigger: {
+          type: Notifications.SchedulableTriggerInputTypes.CALENDAR,
+          hour: h,
+          minute: 0,
+          repeats: true,
+        },
+      });
+    }
+  }, [ensurePerms]);
+
+  // Set-and-forget schedule once when the app first mounts
+  useEffect(() => {
+    scheduleDailyTopOfHourForever().catch(() => {});
+  }, [scheduleDailyTopOfHourForever]);
 
   const item = SAINT_BY_HOUR[hour];
 
@@ -121,7 +137,7 @@ export default function Index() {
           <Text style={styles.captionQuote}>{item.text}</Text>
         </Text>
 
-        {/* Controls */}
+        {/* Controls (keep for testing) */}
         <View style={styles.row}>
           <TouchableOpacity
             style={styles.btn}
@@ -152,6 +168,7 @@ export default function Index() {
             <Text style={styles.btnText}>Next ▶︎</Text>
           </TouchableOpacity>
         </View>
+
         <View style={styles.row}>
           <TouchableOpacity
             style={styles.btn}
@@ -210,16 +227,9 @@ const styles = StyleSheet.create({
     marginTop: 12,
     fontSize: 18,
   },
-  captionName: {
-    fontWeight: "700",
-  },
-  captionSep: {
-    fontWeight: "400",
-  },
-  captionQuote: {
-    fontWeight: "400",
-    fontSize: 16,
-  },
+  captionName: { fontWeight: "700" },
+  captionSep: { fontWeight: "400" },
+  captionQuote: { fontWeight: "400", fontSize: 16 },
   timeText: {
     color: "white",
     fontWeight: "500",

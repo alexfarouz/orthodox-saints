@@ -3,47 +3,116 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13672CB67BF821E78A823C7B /* libPods-OrthodoxSaints.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5290A54CAB67678F9B65B3CA /* libPods-OrthodoxSaints.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
-		755B40BE785FC915ED4DD0A4 /* libPods-OrthodoxSaints.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC076AEE8D27184BDC5AA61 /* libPods-OrthodoxSaints.a */; };
-		76D8CAC00D2DCC89CC1744B5 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 2FC797D4E4F2511A1F9961E1 /* PrivacyInfo.xcprivacy */; };
+		5E61E25BF48CC9C2F399A1DF /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = D40C0B59FBD78C7DE94425F2 /* PrivacyInfo.xcprivacy */; };
+		A90A92AC2EC3EAF700BCFCB5 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90A92AB2EC3EAF700BCFCB5 /* WidgetKit.framework */; };
+		A90A92AE2EC3EAF700BCFCB5 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90A92AD2EC3EAF700BCFCB5 /* SwiftUI.framework */; };
+		A90A92BD2EC3EAF800BCFCB5 /* OrthodoxSaintsWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A90A92AA2EC3EAF700BCFCB5 /* OrthodoxSaintsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
+		E2C23D4A8EA57DD38470AA14 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E57AE927DEAC450E8DEDD9 /* ExpoModulesProvider.swift */; };
 		F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11748412D0307B40044C1D9 /* AppDelegate.swift */; };
-		F764F5D02D9AD37AD03E3917 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E592967C20EB8662D99F955 /* ExpoModulesProvider.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A90A92BB2EC3EAF800BCFCB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A90A92A92EC3EAF700BCFCB5;
+			remoteInfo = OrthodoxSaintsWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A90A92BE2EC3EAF800BCFCB5 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A90A92BD2EC3EAF800BCFCB5 /* OrthodoxSaintsWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		017A43EAF204933960126F59 /* Pods-OrthodoxSaints.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrthodoxSaints.debug.xcconfig"; path = "Target Support Files/Pods-OrthodoxSaints/Pods-OrthodoxSaints.debug.xcconfig"; sourceTree = "<group>"; };
-		0CC076AEE8D27184BDC5AA61 /* libPods-OrthodoxSaints.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OrthodoxSaints.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* OrthodoxSaints.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrthodoxSaints.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = OrthodoxSaints/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = OrthodoxSaints/Info.plist; sourceTree = "<group>"; };
-		2FC797D4E4F2511A1F9961E1 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = OrthodoxSaints/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		3C856D879426CADBF60DBE78 /* Pods-OrthodoxSaints.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrthodoxSaints.release.xcconfig"; path = "Target Support Files/Pods-OrthodoxSaints/Pods-OrthodoxSaints.release.xcconfig"; sourceTree = "<group>"; };
-		8E592967C20EB8662D99F955 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-OrthodoxSaints/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		1CDC8B2098DFC269EF55EA9F /* Pods-OrthodoxSaints.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrthodoxSaints.debug.xcconfig"; path = "Target Support Files/Pods-OrthodoxSaints/Pods-OrthodoxSaints.debug.xcconfig"; sourceTree = "<group>"; };
+		31E57AE927DEAC450E8DEDD9 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-OrthodoxSaints/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		5290A54CAB67678F9B65B3CA /* libPods-OrthodoxSaints.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OrthodoxSaints.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A90A92AA2EC3EAF700BCFCB5 /* OrthodoxSaintsWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OrthodoxSaintsWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A90A92AB2EC3EAF700BCFCB5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		A90A92AD2EC3EAF700BCFCB5 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		A9162AB32EC5331B00DC7023 /* OrthodoxSaintsWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OrthodoxSaintsWidgetExtension.entitlements; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = OrthodoxSaints/SplashScreen.storyboard; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
+		BC9752AA93174AFB3647BD5A /* Pods-OrthodoxSaints.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrthodoxSaints.release.xcconfig"; path = "Target Support Files/Pods-OrthodoxSaints/Pods-OrthodoxSaints.release.xcconfig"; sourceTree = "<group>"; };
+		D40C0B59FBD78C7DE94425F2 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = OrthodoxSaints/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F11748412D0307B40044C1D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = OrthodoxSaints/AppDelegate.swift; sourceTree = "<group>"; };
 		F11748442D0722820044C1D9 /* OrthodoxSaints-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "OrthodoxSaints-Bridging-Header.h"; path = "OrthodoxSaints/OrthodoxSaints-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A90A92C12EC3EAF800BCFCB5 /* Exceptions for "OrthodoxSaintsWidget" folder in "OrthodoxSaintsWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = A90A92A92EC3EAF700BCFCB5 /* OrthodoxSaintsWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		A90A92AF2EC3EAF700BCFCB5 /* OrthodoxSaintsWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A90A92C12EC3EAF800BCFCB5 /* Exceptions for "OrthodoxSaintsWidget" folder in "OrthodoxSaintsWidgetExtension" target */,
+			);
+			path = OrthodoxSaintsWidget;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		13B07F8C1A680F5B00A75B9A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				755B40BE785FC915ED4DD0A4 /* libPods-OrthodoxSaints.a in Frameworks */,
+				13672CB67BF821E78A823C7B /* libPods-OrthodoxSaints.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A90A92A72EC3EAF700BCFCB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A90A92AE2EC3EAF700BCFCB5 /* SwiftUI.framework in Frameworks */,
+				A90A92AC2EC3EAF700BCFCB5 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F6A9DC74C4C35B7248D6CBD /* ExpoModulesProviders */ = {
+			isa = PBXGroup;
+			children = (
+				FB84D8AA5DA3066023496533 /* OrthodoxSaints */,
+			);
+			name = ExpoModulesProviders;
+			sourceTree = "<group>";
+		};
 		13B07FAE1A68108700A75B9A /* OrthodoxSaints */ = {
 			isa = PBXGroup;
 			children = (
@@ -53,7 +122,7 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
-				2FC797D4E4F2511A1F9961E1 /* PrivacyInfo.xcprivacy */,
+				D40C0B59FBD78C7DE94425F2 /* PrivacyInfo.xcprivacy */,
 			);
 			name = OrthodoxSaints;
 			sourceTree = "<group>";
@@ -62,19 +131,11 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				0CC076AEE8D27184BDC5AA61 /* libPods-OrthodoxSaints.a */,
+				5290A54CAB67678F9B65B3CA /* libPods-OrthodoxSaints.a */,
+				A90A92AB2EC3EAF700BCFCB5 /* WidgetKit.framework */,
+				A90A92AD2EC3EAF700BCFCB5 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5B5814CABE529C1505F3F264 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				017A43EAF204933960126F59 /* Pods-OrthodoxSaints.debug.xcconfig */,
-				3C856D879426CADBF60DBE78 /* Pods-OrthodoxSaints.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -87,12 +148,14 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				A9162AB32EC5331B00DC7023 /* OrthodoxSaintsWidgetExtension.entitlements */,
 				13B07FAE1A68108700A75B9A /* OrthodoxSaints */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
+				A90A92AF2EC3EAF700BCFCB5 /* OrthodoxSaintsWidget */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				5B5814CABE529C1505F3F264 /* Pods */,
-				99B59D5839F4023A1D6B0A4A /* ExpoModulesProviders */,
+				C7F95E4563D613A025FD9231 /* Pods */,
+				0F6A9DC74C4C35B7248D6CBD /* ExpoModulesProviders */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -103,16 +166,9 @@
 			isa = PBXGroup;
 			children = (
 				13B07F961A680F5B00A75B9A /* OrthodoxSaints.app */,
+				A90A92AA2EC3EAF700BCFCB5 /* OrthodoxSaintsWidgetExtension.appex */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		99B59D5839F4023A1D6B0A4A /* ExpoModulesProviders */ = {
-			isa = PBXGroup;
-			children = (
-				D5368E1279F6DE3D1DD7AC17 /* OrthodoxSaints */,
-			);
-			name = ExpoModulesProviders;
 			sourceTree = "<group>";
 		};
 		BB2F792B24A3F905000567C9 /* Supporting */ = {
@@ -124,10 +180,19 @@
 			path = OrthodoxSaints/Supporting;
 			sourceTree = "<group>";
 		};
-		D5368E1279F6DE3D1DD7AC17 /* OrthodoxSaints */ = {
+		C7F95E4563D613A025FD9231 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8E592967C20EB8662D99F955 /* ExpoModulesProvider.swift */,
+				1CDC8B2098DFC269EF55EA9F /* Pods-OrthodoxSaints.debug.xcconfig */,
+				BC9752AA93174AFB3647BD5A /* Pods-OrthodoxSaints.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FB84D8AA5DA3066023496533 /* OrthodoxSaints */ = {
+			isa = PBXGroup;
+			children = (
+				31E57AE927DEAC450E8DEDD9 /* ExpoModulesProvider.swift */,
 			);
 			name = OrthodoxSaints;
 			sourceTree = "<group>";
@@ -140,22 +205,44 @@
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "OrthodoxSaints" */;
 			buildPhases = (
 				08A4A3CD28434E44B6B9DE2E /* [CP] Check Pods Manifest.lock */,
-				5E1493462E6F8554C0DAD9FA /* [Expo] Configure project */,
+				9E36175A696988A097B1FDF6 /* [Expo] Configure project */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */,
-				5311F20CF894DF8F7C2FC148 /* [CP] Embed Pods Frameworks */,
+				4CBFC6AFBF03E0043441DFE9 /* [CP] Embed Pods Frameworks */,
+				A90A92BE2EC3EAF800BCFCB5 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A90A92BC2EC3EAF800BCFCB5 /* PBXTargetDependency */,
 			);
 			name = OrthodoxSaints;
 			productName = OrthodoxSaints;
 			productReference = 13B07F961A680F5B00A75B9A /* OrthodoxSaints.app */;
 			productType = "com.apple.product-type.application";
+		};
+		A90A92A92EC3EAF700BCFCB5 /* OrthodoxSaintsWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A90A92C22EC3EAF800BCFCB5 /* Build configuration list for PBXNativeTarget "OrthodoxSaintsWidgetExtension" */;
+			buildPhases = (
+				A90A92A62EC3EAF700BCFCB5 /* Sources */,
+				A90A92A72EC3EAF700BCFCB5 /* Frameworks */,
+				A90A92A82EC3EAF700BCFCB5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				A90A92AF2EC3EAF700BCFCB5 /* OrthodoxSaintsWidget */,
+			);
+			name = OrthodoxSaintsWidgetExtension;
+			productName = OrthodoxSaintsWidgetExtension;
+			productReference = A90A92AA2EC3EAF700BCFCB5 /* OrthodoxSaintsWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -163,15 +250,18 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 2600;
 				LastUpgradeCheck = 1130;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
 						LastSwiftMigration = 1250;
 					};
+					A90A92A92EC3EAF700BCFCB5 = {
+						CreatedOnToolsVersion = 26.0.1;
+					};
 				};
 			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "OrthodoxSaints" */;
-			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -179,11 +269,13 @@
 				Base,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
+			preferredProjectObjectVersion = 77;
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* OrthodoxSaints */,
+				A90A92A92EC3EAF700BCFCB5 /* OrthodoxSaintsWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -196,7 +288,14 @@
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
-				76D8CAC00D2DCC89CC1744B5 /* PrivacyInfo.xcprivacy in Resources */,
+				5E61E25BF48CC9C2F399A1DF /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A90A92A82EC3EAF700BCFCB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +309,8 @@
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/.xcode.env",
+				"$(SRCROOT)/.xcode.env.local",
 			);
 			name = "Bundle React Native code and images";
 			outputPaths = (
@@ -240,25 +341,41 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5311F20CF894DF8F7C2FC148 /* [CP] Embed Pods Frameworks */ = {
+		4CBFC6AFBF03E0043441DFE9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OrthodoxSaints/Pods-OrthodoxSaints-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrthodoxSaints/Pods-OrthodoxSaints-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrthodoxSaints/Pods-OrthodoxSaints-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrthodoxSaints/Pods-OrthodoxSaints-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5E1493462E6F8554C0DAD9FA /* [Expo] Configure project */ = {
+		800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrthodoxSaints/Pods-OrthodoxSaints-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrthodoxSaints/Pods-OrthodoxSaints-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrthodoxSaints/Pods-OrthodoxSaints-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E36175A696988A097B1FDF6 /* [Expo] Configure project */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -267,55 +384,20 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/.xcode.env",
+				"$(SRCROOT)/.xcode.env.local",
+				"$(SRCROOT)/OrthodoxSaints/OrthodoxSaints.entitlements",
+				"$(SRCROOT)/Pods/Target Support Files/Pods-OrthodoxSaints/expo-configure-project.sh",
 			);
 			name = "[Expo] Configure project";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"$(SRCROOT)/Pods/Target Support Files/Pods-OrthodoxSaints/ExpoModulesProvider.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-OrthodoxSaints/expo-configure-project.sh\"\n";
-		};
-		800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OrthodoxSaints/Pods-OrthodoxSaints-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/EXApplication/ExpoApplication_privacy.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/EXConstants/EXConstants.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/EXConstants/ExpoConstants_privacy.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/EXNotifications/ExpoNotifications_privacy.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/ExpoFileSystem/ExpoFileSystem_privacy.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/ExpoSystemUI/ExpoSystemUI_privacy.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/RCT-Folly/RCT-Folly_privacy.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/React-Core_privacy.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/React-cxxreact/React-cxxreact_privacy.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/boost/boost_privacy.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/glog/glog_privacy.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ExpoApplication_privacy.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EXConstants.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ExpoConstants_privacy.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ExpoNotifications_privacy.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ExpoFileSystem_privacy.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ExpoSystemUI_privacy.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RCT-Folly_privacy.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/React-Core_privacy.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/React-cxxreact_privacy.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SDWebImage.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/boost_privacy.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/glog_privacy.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrthodoxSaints/Pods-OrthodoxSaints-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -325,21 +407,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */,
-				F764F5D02D9AD37AD03E3917 /* ExpoModulesProvider.swift in Sources */,
+				E2C23D4A8EA57DD38470AA14 /* ExpoModulesProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A90A92A62EC3EAF700BCFCB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		A90A92BC2EC3EAF800BCFCB5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A90A92A92EC3EAF700BCFCB5 /* OrthodoxSaintsWidgetExtension */;
+			targetProxy = A90A92BB2EC3EAF800BCFCB5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 017A43EAF204933960126F59 /* Pods-OrthodoxSaints.debug.xcconfig */;
+			baseConfigurationReference = 1CDC8B2098DFC269EF55EA9F /* Pods-OrthodoxSaints.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = OrthodoxSaints/OrthodoxSaints.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FW836U88S5;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -358,7 +456,7 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.anonymous.orthodoxsaints;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexfarouz.orthodoxsaints;
 				PRODUCT_NAME = OrthodoxSaints;
 				SWIFT_OBJC_BRIDGING_HEADER = "OrthodoxSaints/OrthodoxSaints-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -370,12 +468,13 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C856D879426CADBF60DBE78 /* Pods-OrthodoxSaints.release.xcconfig */;
+			baseConfigurationReference = BC9752AA93174AFB3647BD5A /* Pods-OrthodoxSaints.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = OrthodoxSaints/OrthodoxSaints.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FW836U88S5;
 				INFOPLIST_FILE = OrthodoxSaints/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -389,7 +488,7 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = com.anonymous.orthodoxsaints;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexfarouz.orthodoxsaints;
 				PRODUCT_NAME = OrthodoxSaints;
 				SWIFT_OBJC_BRIDGING_HEADER = "OrthodoxSaints/OrthodoxSaints-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -453,13 +552,10 @@
 				LIBRARY_SEARCH_PATHS = "$(SDKROOT)/usr/lib/swift\"$(inherited)\"";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_ENABLE_EXPLICIT_MODULES = NO;
 				USE_HERMES = true;
 			};
 			name = Debug;
@@ -511,14 +607,108 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(SDKROOT)/usr/lib/swift\"$(inherited)\"";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				SWIFT_ENABLE_EXPLICIT_MODULES = NO;
 				USE_HERMES = true;
 				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A90A92BF2EC3EAF800BCFCB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = OrthodoxSaintsWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = FW836U88S5;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OrthodoxSaintsWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OrthodoxSaintsWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexfarouz.orthodoxsaints.OrthodoxSaintsWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A90A92C02EC3EAF800BCFCB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = OrthodoxSaintsWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = FW836U88S5;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OrthodoxSaintsWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OrthodoxSaintsWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexfarouz.orthodoxsaints.OrthodoxSaintsWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -539,6 +729,15 @@
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
 				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A90A92C22EC3EAF800BCFCB5 /* Build configuration list for PBXNativeTarget "OrthodoxSaintsWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A90A92BF2EC3EAF800BCFCB5 /* Debug */,
+				A90A92C02EC3EAF800BCFCB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

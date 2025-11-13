@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "fr-bishoy-kamel.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

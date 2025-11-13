@@ -1,0 +1,80 @@
+//
+//  OrthodoxSaintsWidgetLiveActivity.swift
+//  OrthodoxSaintsWidget
+//
+//  Created by Alex Farouz on 11/11/25.
+//
+
+import ActivityKit
+import WidgetKit
+import SwiftUI
+
+struct OrthodoxSaintsWidgetAttributes: ActivityAttributes {
+    public struct ContentState: Codable, Hashable {
+        // Dynamic stateful properties about your activity go here!
+        var emoji: String
+    }
+
+    // Fixed non-changing properties about your activity go here!
+    var name: String
+}
+
+struct OrthodoxSaintsWidgetLiveActivity: Widget {
+    var body: some WidgetConfiguration {
+        ActivityConfiguration(for: OrthodoxSaintsWidgetAttributes.self) { context in
+            // Lock screen/banner UI goes here
+            VStack {
+                Text("Hello \(context.state.emoji)")
+            }
+            .activityBackgroundTint(Color.cyan)
+            .activitySystemActionForegroundColor(Color.black)
+
+        } dynamicIsland: { context in
+            DynamicIsland {
+                // Expanded UI goes here.  Compose the expanded UI through
+                // various regions, like leading/trailing/center/bottom
+                DynamicIslandExpandedRegion(.leading) {
+                    Text("Leading")
+                }
+                DynamicIslandExpandedRegion(.trailing) {
+                    Text("Trailing")
+                }
+                DynamicIslandExpandedRegion(.bottom) {
+                    Text("Bottom \(context.state.emoji)")
+                    // more content
+                }
+            } compactLeading: {
+                Text("L")
+            } compactTrailing: {
+                Text("T \(context.state.emoji)")
+            } minimal: {
+                Text(context.state.emoji)
+            }
+            .widgetURL(URL(string: "http://www.apple.com"))
+            .keylineTint(Color.red)
+        }
+    }
+}
+
+extension OrthodoxSaintsWidgetAttributes {
+    fileprivate static var preview: OrthodoxSaintsWidgetAttributes {
+        OrthodoxSaintsWidgetAttributes(name: "World")
+    }
+}
+
+extension OrthodoxSaintsWidgetAttributes.ContentState {
+    fileprivate static var smiley: OrthodoxSaintsWidgetAttributes.ContentState {
+        OrthodoxSaintsWidgetAttributes.ContentState(emoji: "😀")
+     }
+     
+     fileprivate static var starEyes: OrthodoxSaintsWidgetAttributes.ContentState {
+         OrthodoxSaintsWidgetAttributes.ContentState(emoji: "🤩")
+     }
+}
+
+#Preview("Notification", as: .content, using: OrthodoxSaintsWidgetAttributes.preview) {
+   OrthodoxSaintsWidgetLiveActivity()
+} contentStates: {
+    OrthodoxSaintsWidgetAttributes.ContentState.smiley
+    OrthodoxSaintsWidgetAttributes.ContentState.starEyes
+}

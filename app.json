@@ -13,7 +13,7 @@
       "color": "#000000"
     },
     "ios": {
-      "bundleIdentifier": "com.anonymous.orthodoxsaints",
+      "bundleIdentifier": "com.alexfarouz.orthodoxsaints",
       "supportsTablet": true,
       "infoPlist": { "CFBundleDisplayName": "Orthodox Saints" }
     },

@@ -1,4 +1,5 @@
 import * as Notifications from "expo-notifications";
+import { router } from "expo-router";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   Alert,
@@ -10,7 +11,6 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import type { Item } from "../data/saints";
 import { SAINT_BY_HOUR } from "../data/saints-by-hour";
 
 const coptic = require("../assets/images/cross.png");
@@ -29,8 +29,8 @@ const hourLabel = (d: Date) => d.toLocaleTimeString([], { hour: "numeric" });
 
 export default function Index() {
   const [now, setNow] = useState(new Date());
-  const [followClock, setFollowClock] = useState(true);
-  const [manualHour, setManualHour] = useState(0); // 0..23
+  const [followClock] = useState(true); // setFollowClock
+  const [manualHour] = useState(0); // setManualHour
 
   // tick every 30s when following the clock
   useEffect(() => {
@@ -58,26 +58,26 @@ export default function Index() {
   }, []);
 
   // Send a one-off local notification immediately (test button)
-  async function sendTestNotification(item: Item) {
-    try {
-      await ensurePerms();
-      if (Platform.OS === "android") {
-        await Notifications.setNotificationChannelAsync("default", {
-          name: "default",
-          importance: Notifications.AndroidImportance.HIGH,
-          vibrationPattern: [0, 250, 250, 250],
-          lightColor: "#FFFFFF",
-        });
-      }
-      await Notifications.scheduleNotificationAsync({
-        content: { title: item.name, body: item.text },
-        trigger: null, // fire now
-      });
-    } catch (e: any) {
-      console.error(e);
-      Alert.alert("Error", String(e?.message ?? e));
-    }
-  }
+  // async function sendTestNotification(item: Item) {
+  //   try {
+  //     await ensurePerms();
+  //     if (Platform.OS === "android") {
+  //       await Notifications.setNotificationChannelAsync("default", {
+  //         name: "default",
+  //         importance: Notifications.AndroidImportance.HIGH,
+  //         vibrationPattern: [0, 250, 250, 250],
+  //         lightColor: "#FFFFFF",
+  //       });
+  //     }
+  //     await Notifications.scheduleNotificationAsync({
+  //       content: { title: item.name, body: item.text },
+  //       trigger: null, // fire now
+  //     });
+  //   } catch (e: any) {
+  //     console.error(e);
+  //     Alert.alert("Error", String(e?.message ?? e));
+  //   }
+  // }
 
   const scheduleDailyTopOfHourForever = useCallback(async () => {
     await ensurePerms();
@@ -114,6 +114,18 @@ export default function Index() {
 
   return (
     <SafeAreaView style={styles.root}>
+      {/* Menu Button */}
+      <TouchableOpacity
+        style={styles.menuButton}
+        onPress={() => router.push("/settings")}
+      >
+        <View style={styles.menuIcon}>
+          <View style={styles.menuLine} />
+          <View style={styles.menuLine} />
+          <View style={styles.menuLine} />
+        </View>
+      </TouchableOpacity>
+
       <View style={styles.container}>
         <Image
           source={coptic}
@@ -137,8 +149,8 @@ export default function Index() {
           <Text style={styles.captionQuote}>{item.text}</Text>
         </Text>
 
-        {/* Controls (keep for testing) */}
-        <View style={styles.row}>
+        {/* TEST CONTROLS - Commented out for production */}
+        {/* <View style={styles.row}>
           <TouchableOpacity
             style={styles.btn}
             onPress={() => {
@@ -176,7 +188,7 @@ export default function Index() {
           >
             <Text style={styles.btnText}>Send test notification</Text>
           </TouchableOpacity>
-        </View>
+        </View> */}
       </View>
     </SafeAreaView>
   );
@@ -184,6 +196,23 @@ export default function Index() {
 
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: "black" },
+  menuButton: {
+    position: "absolute",
+    top: 50,
+    right: 20,
+    zIndex: 10,
+    padding: 10,
+  },
+  menuIcon: {
+    width: 28,
+    height: 20,
+    justifyContent: "space-between",
+  },
+  menuLine: {
+    height: 3,
+    backgroundColor: "white",
+    borderRadius: 2,
+  },
   container: {
     flex: 1,
     alignItems: "center",
@@ -207,20 +236,21 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     textAlign: "center",
   },
-  row: {
-    flexDirection: "row",
-    gap: 12,
-    marginTop: 14,
-    flexWrap: "wrap",
-    justifyContent: "center",
-  },
-  btn: {
-    paddingVertical: 8,
-    paddingHorizontal: 12,
-    borderRadius: 10,
-    borderColor: "rgba(255,255,255,.25)",
-    borderWidth: 1,
-  },
+  // TEST BUTTON STYLES - Commented out for production
+  // row: {
+  //   flexDirection: "row",
+  //   gap: 12,
+  //   marginTop: 14,
+  //   flexWrap: "wrap",
+  //   justifyContent: "center",
+  // },
+  // btn: {
+  //   paddingVertical: 8,
+  //   paddingHorizontal: 12,
+  //   borderRadius: 10,
+  //   borderColor: "rgba(255,255,255,.25)",
+  //   borderWidth: 1,
+  // },
   captionBase: {
     color: "white",
     textAlign: "center",
@@ -244,6 +274,6 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     resizeMode: "contain",
   },
-  btnActive: { backgroundColor: "rgba(255,255,255,.07)" },
-  btnText: { color: "white", fontWeight: "700" },
+  // btnActive: { backgroundColor: "rgba(255,255,255,.07)" },
+  // btnText: { color: "white", fontWeight: "700" },
 });

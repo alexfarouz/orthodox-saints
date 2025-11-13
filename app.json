@@ -15,14 +15,17 @@
     "ios": {
       "bundleIdentifier": "com.alexfarouz.orthodoxsaints",
       "supportsTablet": true,
-      "infoPlist": { "CFBundleDisplayName": "Orthodox Saints" }
+      "infoPlist": {
+        "CFBundleDisplayName": "Orthodox Saints"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/cross.png",
         "backgroundColor": "#000000"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.alexfarouz.orthodoxsaints"
     },
     "web": {
       "bundler": "metro",

@@ -1,6 +1,7 @@
 import { router } from "expo-router";
 import {
   Alert,
+  Image,
   ScrollView,
   StyleSheet,
   Text,
@@ -10,6 +11,14 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function SettingsScreen() {
+  const handleWelcomeMessage = () => {
+    Alert.alert(
+      "Welcome to Orthodox Saints",
+      "Receive hourly prayers and wisdom from Orthodox Saints throughout the day. Each hour brings a new saint and their spiritual guidance to help you maintain a prayerful connection with God.\n\nMay these prayers strengthen your faith and bring peace to your soul.",
+      [{ text: "Close" }]
+    );
+  };
+
   const handleDisableNotifications = () => {
     Alert.alert(
       "Disable Notifications",
@@ -45,9 +54,7 @@ export default function SettingsScreen() {
           <Text style={styles.welcomeText}>Welcome</Text>
           <TouchableOpacity
             style={styles.chevron}
-            onPress={() => {
-              /* Could open additional welcome/tutorial */
-            }}
+            onPress={handleWelcomeMessage}
           >
             <Text style={styles.chevronText}>›</Text>
           </TouchableOpacity>
@@ -69,9 +76,11 @@ export default function SettingsScreen() {
           <Text style={styles.sectionTitle}>WIDGETS</Text>
           <View style={styles.card}>
             <View style={styles.widgetPreview}>
-              <View style={styles.widgetPlaceholder}>
-                <Text style={styles.widgetText}>Widget Preview</Text>
-              </View>
+              <Image
+                source={require("../assets/images/preview.png")}
+                style={styles.widgetImage}
+                resizeMode="contain"
+              />
             </View>
             <Text style={styles.cardText}>
               You can add a widget, which always displays the current prayer, to
@@ -168,18 +177,10 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     alignItems: "center",
   },
-  widgetPlaceholder: {
+  widgetImage: {
     width: 160,
     height: 160,
-    backgroundColor: "#0a84ff",
     borderRadius: 20,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  widgetText: {
-    color: "white",
-    fontSize: 14,
-    fontWeight: "600",
   },
   actionRow: {
     backgroundColor: "#2c2c2e",

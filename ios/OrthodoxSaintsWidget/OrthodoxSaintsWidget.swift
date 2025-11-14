@@ -254,13 +254,13 @@ struct OrthodoxSaintsWidgetEntryView: View {
           .clipped()
 
         Text("\(hourString(entry.date)): \"\(entry.saint.quote)\"")
-          .font(.system(size: 13, weight: .semibold, design: .rounded))
+          .font(.system(size: 16, weight: .bold, design: .rounded))
           .foregroundStyle(.white)
-          .shadow(color: .black.opacity(0.95), radius: 3)
-          .lineLimit(8)
-          .minimumScaleFactor(0.6)
+          .shadow(color: .black.opacity(0.95), radius: 4)
+          .lineLimit(10)
+          .minimumScaleFactor(0.7)
           .multilineTextAlignment(.leading)
-          .padding(10)
+          .padding(12)
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

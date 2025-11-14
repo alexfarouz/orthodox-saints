@@ -4,14 +4,10 @@
     "slug": "orthodox-saints",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/cross.png",
+    "icon": "./assets/images/cross-transparent-1024.png",
     "scheme": "orthodoxsaints",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
-    "notification": {
-      "icon": "./assets/cross.png",
-      "color": "#000000"
-    },
     "ios": {
       "bundleIdentifier": "com.alexfarouz.orthodoxsaints",
       "supportsTablet": true,
@@ -27,6 +23,9 @@
       "edgeToEdgeEnabled": true,
       "package": "com.alexfarouz.orthodoxsaints"
     },
+    "notification": {
+      "icon": "./assets/images/cross-transparent-1024.png"
+    },
     "web": {
       "bundler": "metro",
       "output": "static",
@@ -37,7 +36,7 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/cross.png",
+          "image": "./assets/images/cross-transparent.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#000000"

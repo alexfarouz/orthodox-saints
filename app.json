@@ -4,7 +4,7 @@
     "slug": "orthodox-saints",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/cross-transparent-1024.png",
+    "icon": "./assets/images/icon-1024-white.png",
     "scheme": "orthodoxsaints",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -24,7 +24,7 @@
       "package": "com.alexfarouz.orthodoxsaints"
     },
     "notification": {
-      "icon": "./assets/images/cross-transparent-1024.png"
+      "icon": "./assets/images/icon-1024-white.png"
     },
     "web": {
       "bundler": "metro",
@@ -36,7 +36,7 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/cross-transparent.png",
+          "image": "./assets/images/icon-1024-white.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#000000"
@@ -45,6 +45,12 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "0016eb7b-702d-45ec-8a3f-9105c2fd4776"
+      }
     }
   }
 }
